@@ -6,30 +6,77 @@
 //
 
 import UIKit
+import SwiftChess
 
 final class ChessBoardViewController: UIViewController {
-
+  
+  private var game: Game {
+    let player = Human(color: .white)
+    let ai = AIPlayer(color: .black, configuration: .init(difficulty: .easy))
+    
+    return .init(firstPlayer: player, secondPlayer: ai)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
     let board = ChessBoardView().autolayoutEnabled
+    board.delegate = self
     view.addSubview(board)
     board.pin(to: view.safeAreaLayoutGuide)
-    
-    // TODO: JUST TESTING!!!!!
-    let fuuuuck = ChessPieceQueen().autolayoutEnabled
-    view.addSubview(fuuuuck)
-    NSLayoutConstraint.activate([
-      fuuuuck.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-      fuuuuck.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-      fuuuuck.heightAnchor.constraint(equalToConstant: 42),
-      fuuuuck.widthAnchor.constraint(equalToConstant: 42),
-    ])
   }
 
 
 }
+
+extension ChessBoardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    game.board.squares.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let square = collectionView.dequeueReusableCell(withReuseIdentifier: ChessBoardSquare.identifier, for: indexPath) as? ChessBoardSquare else { return .init() }
+    
+    square.configure(serialOrder: indexPath.row)
+    
+    // TODO: hacky as FUCK maybe put this in the square itself LMAO
+    let squareInfo = game.board.squares[indexPath.row]
+    if let piece = squareInfo.piece {
+      addPieceImage(type: piece.type, color: piece.color, to: square)
+       
+    }
+    return square
+  }
+  
+  private func addPieceImage(type pieceType: Piece.PieceType, color: Color, to square: ChessBoardSquare) {
+    let pieceView: ChessPiece
+    switch pieceType {
+        
+      case .pawn:
+        pieceView = ChessPiecePawn(color: color).autolayoutEnabled
+      case .rook:
+        pieceView = ChessPieceRook(color: color).autolayoutEnabled
+      case .knight:
+        pieceView = ChessPieceKnight(color: color).autolayoutEnabled
+      case .bishop:
+        pieceView = ChessPieceBishop(color: color).autolayoutEnabled
+      case .queen:
+        pieceView = ChessPieceQueen(color: color).autolayoutEnabled
+      case .king:
+        pieceView = ChessPieceKing(color: color).autolayoutEnabled
+    }
+    
+    square.addSubview(pieceView)
+    pieceView.pin(to: square)
+  }
+}
+
+
 
 // TODO: just make this a collection view???
 final class ChessBoardView: UIView {
@@ -54,13 +101,17 @@ final class ChessBoardView: UIView {
     let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout).autolayoutEnabled
     view.register(ChessBoardSquare.self, forCellWithReuseIdentifier: ChessBoardSquare.identifier)
     
-    view.delegate = self
-    view.dataSource = self
-    
     view.isScrollEnabled = false
     
     return view
   }()
+  
+  weak var delegate: (UICollectionViewDelegate & UICollectionViewDataSource)? {
+    didSet {
+      collectionView.delegate = delegate
+      collectionView.dataSource = delegate
+    }
+  }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -81,23 +132,6 @@ final class ChessBoardView: UIView {
       collectionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
       collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor),
       ])
-  }
-}
-
-extension ChessBoardView: UICollectionViewDataSource, UICollectionViewDelegate {
-  func numberOfSections(in collectionView: UICollectionView) -> Int {
-    1
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    64
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let square = collectionView.dequeueReusableCell(withReuseIdentifier: ChessBoardSquare.identifier, for: indexPath) as? ChessBoardSquare else { return .init() }
-    
-    square.configure(serialOrder: indexPath.row)
-    return square
   }
 }
 

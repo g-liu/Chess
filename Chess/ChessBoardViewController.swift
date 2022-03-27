@@ -21,6 +21,8 @@ final class ChessBoardViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
+    view.backgroundColor = .systemBackground
+    
     let board = ChessBoardView().autolayoutEnabled
     board.delegate = self
     view.addSubview(board)
@@ -72,7 +74,7 @@ extension ChessBoardViewController: UICollectionViewDataSource, UICollectionView
     }
     
     square.addSubview(pieceView)
-    pieceView.pin(to: square)
+    pieceView.pin(to: square, margins: .init(top: 2, left: 2, bottom: 2, right: 2))
   }
 }
 
@@ -100,6 +102,9 @@ final class ChessBoardView: UIView {
   private lazy var collectionView: UICollectionView = {
     let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout).autolayoutEnabled
     view.register(ChessBoardSquare.self, forCellWithReuseIdentifier: ChessBoardSquare.identifier)
+    
+    view.layer.borderWidth = 3
+    view.layer.borderColor = UIColor.systemTeal.cgColor
     
     view.isScrollEnabled = false
     
@@ -129,7 +134,7 @@ final class ChessBoardView: UIView {
       collectionView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
       
       // TODO: account for landscape
-      collectionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
+      collectionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, constant: -16),
       collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor),
       ])
   }
@@ -157,9 +162,9 @@ final class ChessBoardSquare: UICollectionViewCell {
   
   private func getColor(serialOrder: Int) -> UIColor {
     if (serialOrder / 8).isEven {
-      return serialOrder.isEven ? .systemGray2 : .systemCyan
+      return serialOrder.isEven ? .white : .systemMint
     } else {
-      return serialOrder.isEven ? .systemCyan : .systemGray2
+      return serialOrder.isEven ? .systemMint : .white
     }
   }
 }

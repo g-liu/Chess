@@ -47,11 +47,12 @@ extension ChessBoardViewController: UICollectionViewDataSource, UICollectionView
     square.configure(serialOrder: indexPath.row)
     
     // TODO: hacky as FUCK maybe put this in the square itself LMAO
-    let squareInfo = game.board.squares[indexPath.row]
+    let transposedCoordinates = 63 - (8*(indexPath.row/8)) - (7-(indexPath.row%8))
+    let squareInfo = game.board.squares[transposedCoordinates]
     if let piece = squareInfo.piece {
       addPieceImage(type: piece.type, color: piece.color, to: square)
-       
     }
+//    addSquareNumber(transposedCoordinates, to: square)
     return square
   }
   
@@ -75,6 +76,18 @@ extension ChessBoardViewController: UICollectionViewDataSource, UICollectionView
     
     square.addSubview(pieceView)
     pieceView.pin(to: square, margins: .init(top: 2, left: 2, bottom: 2, right: 2))
+  }
+  
+  private func addSquareNumber(_ number: Int, to square: ChessBoardSquare) {
+    let label = UILabel().autolayoutEnabled
+    label.text = "\(number)"
+    label.textAlignment = .center
+    label.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
+    label.backgroundColor = .init(white: 1, alpha: 0.75)
+    
+    square.addSubview(label)
+    square.bringSubviewToFront(label)
+    label.pin(to: square)
   }
 }
 
@@ -104,7 +117,7 @@ final class ChessBoardView: UIView {
     view.register(ChessBoardSquare.self, forCellWithReuseIdentifier: ChessBoardSquare.identifier)
     
     view.layer.borderWidth = 3
-    view.layer.borderColor = UIColor.systemTeal.cgColor
+    view.layer.borderColor = UIColor.systemMint.cgColor
     
     view.isScrollEnabled = false
     
@@ -162,9 +175,9 @@ final class ChessBoardSquare: UICollectionViewCell {
   
   private func getColor(serialOrder: Int) -> UIColor {
     if (serialOrder / 8).isEven {
-      return serialOrder.isEven ? .white : .systemMint
+      return serialOrder.isEven ? .systemBackground : .systemMint
     } else {
-      return serialOrder.isEven ? .systemMint : .white
+      return serialOrder.isEven ? .systemMint : .systemBackground
     }
   }
 }

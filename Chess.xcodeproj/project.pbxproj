@@ -16,6 +16,9 @@
 		6C90C6A427F02C640078615D /* ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90C6A327F02C640078615D /* ChessTests.swift */; };
 		6C90C6AE27F02C640078615D /* ChessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90C6AD27F02C640078615D /* ChessUITests.swift */; };
 		6C90C6B027F02C640078615D /* ChessUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90C6AF27F02C640078615D /* ChessUITestsLaunchTests.swift */; };
+		B079DFA242B082B255016B82 /* Pods_Chess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91FB8C9AC656F03440A09F81 /* Pods_Chess.framework */; };
+		DDAE496671ACE3838E212269 /* Pods_Chess_ChessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E123D5243962816A10356C /* Pods_Chess_ChessUITests.framework */; };
+		FCB26F547910571A49060719 /* Pods_ChessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFE1305A7668774B1FACFA5 /* Pods_ChessTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08E123D5243962816A10356C /* Pods_Chess_ChessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chess_ChessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2341A5881812F2FCC3DFD453 /* Pods-Chess-ChessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chess-ChessUITests.debug.xcconfig"; path = "Target Support Files/Pods-Chess-ChessUITests/Pods-Chess-ChessUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C90C68927F02C630078615D /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C90C68C27F02C630078615D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C90C68E27F02C630078615D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		6C90C6A927F02C640078615D /* ChessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C90C6AD27F02C640078615D /* ChessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessUITests.swift; sourceTree = "<group>"; };
 		6C90C6AF27F02C640078615D /* ChessUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8F9EF431D2652004CDDAA131 /* Pods-Chess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chess.release.xcconfig"; path = "Target Support Files/Pods-Chess/Pods-Chess.release.xcconfig"; sourceTree = "<group>"; };
+		91FB8C9AC656F03440A09F81 /* Pods_Chess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F352D132A7F198999E6BD77 /* Pods-Chess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chess.debug.xcconfig"; path = "Target Support Files/Pods-Chess/Pods-Chess.debug.xcconfig"; sourceTree = "<group>"; };
+		9FB439D4A696B9BF69A1D86E /* Pods-ChessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessTests.release.xcconfig"; path = "Target Support Files/Pods-ChessTests/Pods-ChessTests.release.xcconfig"; sourceTree = "<group>"; };
+		B0AF3F6B92AEC5249F4C38E3 /* Pods-ChessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChessTests.debug.xcconfig"; path = "Target Support Files/Pods-ChessTests/Pods-ChessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB63BC0AF659E0E12683C959 /* Pods-Chess-ChessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chess-ChessUITests.release.xcconfig"; path = "Target Support Files/Pods-Chess-ChessUITests/Pods-Chess-ChessUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BFFE1305A7668774B1FACFA5 /* Pods_ChessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B079DFA242B082B255016B82 /* Pods_Chess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB26F547910571A49060719 /* Pods_ChessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDAE496671ACE3838E212269 /* Pods_Chess_ChessUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				6C90C6A227F02C640078615D /* ChessTests */,
 				6C90C6AC27F02C640078615D /* ChessUITests */,
 				6C90C68A27F02C630078615D /* Products */,
+				706A9847CD4F973CD35B9581 /* Pods */,
+				771FCD73B3107FB83E2A401C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +144,30 @@
 			path = ChessUITests;
 			sourceTree = "<group>";
 		};
+		706A9847CD4F973CD35B9581 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F352D132A7F198999E6BD77 /* Pods-Chess.debug.xcconfig */,
+				8F9EF431D2652004CDDAA131 /* Pods-Chess.release.xcconfig */,
+				2341A5881812F2FCC3DFD453 /* Pods-Chess-ChessUITests.debug.xcconfig */,
+				BB63BC0AF659E0E12683C959 /* Pods-Chess-ChessUITests.release.xcconfig */,
+				B0AF3F6B92AEC5249F4C38E3 /* Pods-ChessTests.debug.xcconfig */,
+				9FB439D4A696B9BF69A1D86E /* Pods-ChessTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		771FCD73B3107FB83E2A401C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91FB8C9AC656F03440A09F81 /* Pods_Chess.framework */,
+				08E123D5243962816A10356C /* Pods_Chess_ChessUITests.framework */,
+				BFFE1305A7668774B1FACFA5 /* Pods_ChessTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C90C6B327F02C640078615D /* Build configuration list for PBXNativeTarget "Chess" */;
 			buildPhases = (
+				D85FF69E831CD6FADF5AC340 /* [CP] Check Pods Manifest.lock */,
 				6C90C68527F02C630078615D /* Sources */,
 				6C90C68627F02C630078615D /* Frameworks */,
 				6C90C68727F02C630078615D /* Resources */,
+				9BB4E5311B5F2616F69DBB97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C90C6B627F02C640078615D /* Build configuration list for PBXNativeTarget "ChessTests" */;
 			buildPhases = (
+				24416F4F48225D4A007F4382 /* [CP] Check Pods Manifest.lock */,
 				6C90C69B27F02C640078615D /* Sources */,
 				6C90C69C27F02C640078615D /* Frameworks */,
 				6C90C69D27F02C640078615D /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C90C6B927F02C640078615D /* Build configuration list for PBXNativeTarget "ChessUITests" */;
 			buildPhases = (
+				BC1A3CF71D4322AC2778F030 /* [CP] Check Pods Manifest.lock */,
 				6C90C6A527F02C640078615D /* Sources */,
 				6C90C6A627F02C640078615D /* Frameworks */,
 				6C90C6A727F02C640078615D /* Resources */,
+				5B45A6CE202E3874DF201D8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416F4F48225D4A007F4382 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B45A6CE202E3874DF201D8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chess-ChessUITests/Pods-Chess-ChessUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chess-ChessUITests/Pods-Chess-ChessUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chess-ChessUITests/Pods-Chess-ChessUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BB4E5311B5F2616F69DBB97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chess/Pods-Chess-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chess/Pods-Chess-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chess/Pods-Chess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC1A3CF71D4322AC2778F030 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chess-ChessUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D85FF69E831CD6FADF5AC340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chess-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6C90C68527F02C630078615D /* Sources */ = {
@@ -434,6 +583,7 @@
 		};
 		6C90C6B427F02C640078615D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F352D132A7F198999E6BD77 /* Pods-Chess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +612,7 @@
 		};
 		6C90C6B527F02C640078615D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F9EF431D2652004CDDAA131 /* Pods-Chess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +641,7 @@
 		};
 		6C90C6B727F02C640078615D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0AF3F6B92AEC5249F4C38E3 /* Pods-ChessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +662,7 @@
 		};
 		6C90C6B827F02C640078615D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FB439D4A696B9BF69A1D86E /* Pods-ChessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +683,7 @@
 		};
 		6C90C6BA27F02C640078615D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2341A5881812F2FCC3DFD453 /* Pods-Chess-ChessUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +702,7 @@
 		};
 		6C90C6BB27F02C640078615D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB63BC0AF659E0E12683C959 /* Pods-Chess-ChessUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

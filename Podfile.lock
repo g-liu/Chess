@@ -1,0 +1,16 @@
+PODS:
+  - SwiftChess (1.1.2)
+
+DEPENDENCIES:
+  - SwiftChess (~> 1.1)
+
+SPEC REPOS:
+  trunk:
+    - SwiftChess
+
+SPEC CHECKSUMS:
+  SwiftChess: b35cc118379465ef3675c317b69558ec8cb92d1b
+
+PODFILE CHECKSUM: 31828e2062883139587f8cbcb1bb354498284b5d
+
+COCOAPODS: 1.11.2

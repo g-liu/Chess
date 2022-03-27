@@ -113,9 +113,9 @@ final class ChessBoardSquare: UICollectionViewCell {
   
   private func getColor(serialOrder: Int) -> UIColor {
     if (serialOrder / 8).isEven {
-      return serialOrder.isEven ? .systemGray6 : .systemCyan
+      return serialOrder.isEven ? .systemGray2 : .systemCyan
     } else {
-      return serialOrder.isEven ? .systemCyan : .systemGray6
+      return serialOrder.isEven ? .systemCyan : .systemGray2
     }
   }
 }

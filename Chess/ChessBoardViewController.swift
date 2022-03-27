@@ -16,6 +16,16 @@ final class ChessBoardViewController: UIViewController {
     let board = ChessBoardView().autolayoutEnabled
     view.addSubview(board)
     board.pin(to: view.safeAreaLayoutGuide)
+    
+    // TODO: JUST TESTING!!!!!
+    let fuuuuck = ChessPieceQueen().autolayoutEnabled
+    view.addSubview(fuuuuck)
+    NSLayoutConstraint.activate([
+      fuuuuck.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+      fuuuuck.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+      fuuuuck.heightAnchor.constraint(equalToConstant: 42),
+      fuuuuck.widthAnchor.constraint(equalToConstant: 42),
+    ])
   }
 
 

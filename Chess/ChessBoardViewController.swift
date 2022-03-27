@@ -23,10 +23,16 @@ final class ChessBoardViewController: UIViewController {
 
 // TODO: just make this a collection view???
 final class ChessBoardView: UIView {
-  private lazy var collectionViewLayout: UICollectionViewCompositionalLayout = {
-    let itemLayout = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
+  private var maxSquareSize: CGFloat {
+    let screenSize = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
     
-    let groupSize = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0), heightDimension: .absolute(50.0))
+    return screenSize / 8.0
+  }
+  
+  private lazy var collectionViewLayout: UICollectionViewCompositionalLayout = {
+    let itemLayout = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .absolute(maxSquareSize), heightDimension: .absolute(maxSquareSize)))
+    
+    let groupSize = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0), heightDimension: .fractionalHeight(1/8.0))
     let groupLayout = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: itemLayout, count: 8)
     
     let sectionLayout = NSCollectionLayoutSection(group: groupLayout)
@@ -40,6 +46,8 @@ final class ChessBoardView: UIView {
     
     view.delegate = self
     view.dataSource = self
+    
+    view.isScrollEnabled = false
     
     return view
   }()
@@ -55,7 +63,14 @@ final class ChessBoardView: UIView {
   
   private func setupView() {
     addSubview(collectionView)
-    collectionView.pin(to: safeAreaLayoutGuide)
+    NSLayoutConstraint.activate([
+      collectionView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+      collectionView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+      
+      // TODO: account for landscape
+      collectionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
+      collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor),
+      ])
   }
 }
 

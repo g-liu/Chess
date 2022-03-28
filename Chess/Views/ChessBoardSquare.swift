@@ -60,6 +60,31 @@ final class ChessBoardSquare: UICollectionViewCell {
     
     addSubview(pieceView)
     pieceView.pin(to: self, margins: .init(top: 2, left: 2, bottom: 2, right: 2))
+    
+    let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didDragPiece))
+    pieceView.addGestureRecognizer(dragGestureRecognizer)
+  }
+  
+  @objc func didDragPiece(_ gestureRecognizer: UIPanGestureRecognizer) {
+    guard let pieceView = gestureRecognizer.view as? ChessPiece else {
+      return
+    }
+    
+    if gestureRecognizer.state == .cancelled ||
+        gestureRecognizer.state == .ended ||
+        gestureRecognizer.state == .failed {
+      pieceView.transform = .init(translationX: 0, y: 0)
+      return
+    }
+    
+    
+    let pieceCenter = pieceView.center
+    let gestureCenter = gestureRecognizer.location(in: pieceView)
+//    print("Center is now \(gestureCenter) @ \(pieceCenter) for \(pieceView)")
+    
+    let transformCoordinates = gestureCenter - pieceCenter
+    
+    pieceView.transform = .init(translationX: transformCoordinates.x, y: transformCoordinates.y)
   }
   
   private func addSquareNumber(_ number: Int, to square: ChessBoardSquare) {

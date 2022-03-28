@@ -70,21 +70,41 @@ final class ChessBoardSquare: UICollectionViewCell {
       return
     }
     
-    if gestureRecognizer.state == .cancelled ||
-        gestureRecognizer.state == .ended ||
-        gestureRecognizer.state == .failed {
-      pieceView.transform = .init(translationX: 0, y: 0)
-      return
+//    if gestureRecognizer.state == .cancelled ||
+//        gestureRecognizer.state == .ended ||
+//        gestureRecognizer.state == .failed {
+//      pieceView.transform = .init(translationX: 0, y: 0)
+//      return
+//    }
+//
+//
+//    let pieceCenter = pieceView.center
+//    let gestureCenter = gestureRecognizer.location(in: pieceView)
+////    print("Center is now \(gestureCenter) @ \(pieceCenter) for \(pieceView)")
+//
+//    let transformCoordinates = gestureCenter - pieceCenter
+//
+//    pieceView.transform = .init(translationX: transformCoordinates.x, y: transformCoordinates.y)
+    
+    // TODO: Lmao this code works better
+    // But gotta fix the snapping....
+    // need delegate probably
+    // sigh
+    
+    let location = gestureRecognizer.location(in: self)
+    pieceView.center = location
+    
+    if gestureRecognizer.state == .ended {
+        if pieceView.frame.midX >= layer.frame.width / 2 {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+              pieceView.center.x = self.layer.frame.width - 40
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                pieceView.center.x = 40
+            }, completion: nil)
+        }
     }
-    
-    
-    let pieceCenter = pieceView.center
-    let gestureCenter = gestureRecognizer.location(in: pieceView)
-//    print("Center is now \(gestureCenter) @ \(pieceCenter) for \(pieceView)")
-    
-    let transformCoordinates = gestureCenter - pieceCenter
-    
-    pieceView.transform = .init(translationX: transformCoordinates.x, y: transformCoordinates.y)
   }
   
   private func addSquareNumber(_ number: Int, to square: ChessBoardSquare) {
